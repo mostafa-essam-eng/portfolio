@@ -1,361 +1,449 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
 <head>
-  <meta name="google-site-verification" content="kBwH2cNerQFkxoW14SKWwKdrfUuV0Haa_if4EYenK5w" />
-  <!-- SEO & Meta Tags for Mostafa Essam -->
-<title>Mostafa Essam | مصطفى عصام - Engineering & Robotics Portfolio</title>
-<meta name="description" content="Mostafa Essam (مصطفى عصام) - Engineering student at Pharos University (PUA) specializing in Robotics, Embedded Systems, C++, and Python development.">
-<meta name="keywords" content="Mostafa Essam, مصطفى عصام, Pharos University, Robotics, Embedded Systems, C++, Python, Portfolio">
-<meta name="author" content="Mostafa Essam">
+  <title>Mostafa Essam | مصطفى عصام - Engineering & Robotics Portfolio</title>
+  <meta name="description" content="Mostafa Essam (مصطفى عصام) - Engineering student at Pharos University (PUA) specializing in Robotics, Embedded Systems, C++, and Python development.">
+  <meta name="keywords" content="Mostafa Essam, مصطفى عصام, Pharos University, Robotics, Embedded Systems, C++, Python, Portfolio">
+  <meta name="author" content="Mostafa Essam">
 
-<!-- Open Graph / Social Media Cards -->
-<meta property="og:title" content="Mostafa Essam | مصطفى عصام - Engineering Portfolio">
-<meta property="og:description" content="Engineering Student at Pharos University exploring Robotics, Embedded Systems, C++, and Python.">
-<meta property="og:url" content="https://mostafa-essam-eng.github.io/portfolio">
-<meta property="og:type" content="website">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#070b14">
+  <meta name="theme-color" content="#070a12">
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     :root {
-      --bg: #070b14;
-      --panel: rgba(15, 23, 42, .76);
-      --panel-solid: #0d1423;
-      --text: #eef4ff;
-      --muted: #9aa9c2;
-      --blue: #55a6ff;
-      --cyan: #65e4f3;
-      --line: rgba(137, 169, 220, .18);
-      --glow: rgba(54, 133, 255, .18);
-      --radius: 22px;
-      --max: 1120px;
+      --bg: #070a12;
+      --card-bg: rgba(18, 26, 43, 0.7);
+      --accent: #00f2fe;
+      --accent-glow: rgba(0, 242, 254, 0.3);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body {
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: var(--text);
-      background:
-        radial-gradient(ellipse at 80% 0%, rgba(32, 94, 186, .19), transparent 42rem),
-        radial-gradient(ellipse at 0% 40%, rgba(16, 155, 188, .08), transparent 36rem),
-        var(--bg);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
       overflow-x: hidden;
+      line-height: 1.6;
     }
-    body::before {
-      content: ""; position: fixed; inset: 0; pointer-events: none; z-index: -1;
-      opacity: .2;
-      background-image: linear-gradient(rgba(115, 151, 205, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(115, 151, 205, .08) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: linear-gradient(to bottom, black, transparent 75%);
+
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      background: radial-gradient(circle at 50% 50%, #0b1329 0%, #070a12 100%);
     }
-    a { color: inherit; text-decoration: none; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .nav {
-      position: sticky; top: 0; z-index: 20; backdrop-filter: blur(18px);
-      background: rgba(7, 11, 20, .78); border-bottom: 1px solid var(--line);
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: rgba(7, 10, 18, 0.85);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border);
     }
-    .nav-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { display: inline-flex; align-items: center; gap: 11px; font-weight: 800; letter-spacing: -.03em; white-space: nowrap; }
-    .brand-mark { display: grid; place-items: center; width: 36px; height: 36px; border-radius: 12px; color: #06101f; background: linear-gradient(135deg, var(--cyan), var(--blue)); box-shadow: 0 0 26px var(--glow); font-size: .85rem; }
-    .nav-links { display: flex; align-items: center; gap: 24px; color: var(--muted); font-size: .91rem; }
-    .nav-links a:hover, .nav-links a:focus-visible { color: var(--text); }
-    .nav-links .nav-cta { padding: 9px 15px; border: 1px solid rgba(85,166,255,.42); border-radius: 12px; color: var(--text); }
-    .menu-btn { display: none; border: 1px solid var(--line); color: var(--text); background: var(--panel-solid); padding: 8px 11px; border-radius: 10px; font: inherit; }
-    .hero { min-height: 690px; display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 55px; padding-block: 82px 95px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 9px; border: 1px solid var(--line); background: rgba(16, 29, 50, .62); padding: 7px 12px; border-radius: 999px; color: #c4d8f7; font-size: .82rem; }
-    .dot { width: 7px; height: 7px; border-radius: 50%; background: #6be7b3; box-shadow: 0 0 13px rgba(107,231,179,.8); }
-    h1 { margin: 23px 0 17px; font-size: clamp(2.8rem, 6.4vw, 5.45rem); letter-spacing: -.075em; line-height: .99; }
-    .gradient-text { background: linear-gradient(100deg, #f3f7ff 8%, #79baff 56%, #6be6f2); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-copy { max-width: 610px; color: var(--muted); font-size: 1.08rem; }
-    .hero-copy strong { color: #dceaff; font-weight: 600; }
-    .actions { display: flex; flex-wrap: wrap; gap: 13px; margin-top: 30px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; padding: 12px 18px; border-radius: 13px; border: 1px solid var(--line); font-weight: 700; font-size: .94rem; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
-    .btn:hover { transform: translateY(-3px); border-color: rgba(101,228,243,.55); }
-    .btn-primary { color: #06101f; background: linear-gradient(110deg, var(--cyan), #72aaff); border-color: transparent; box-shadow: 0 8px 32px rgba(53,143,255,.2); }
-    .btn-secondary { background: rgba(15, 23, 42, .6); }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 19px; margin-top: 28px; color: #8fa1bc; font-size: .83rem; }
-    .hero-meta span { display: inline-flex; align-items: center; gap: 7px; }
-    .hero-visual { position: relative; min-height: 430px; display: grid; place-items: center; }
-    .orbit { position: absolute; width: min(100%, 405px); aspect-ratio: 1; border: 1px solid rgba(94, 166, 255, .2); border-radius: 50%; animation: spin 35s linear infinite; }
-    .orbit::before, .orbit::after { content: ""; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: var(--cyan); box-shadow: 0 0 20px var(--cyan); }
-    .orbit::before { top: 15%; left: 16%; } .orbit::after { right: 5%; bottom: 28%; background: var(--blue); box-shadow: 0 0 20px var(--blue); }
-    .orbit.orbit-two { width: 310px; border-style: dashed; border-color: rgba(101,228,243,.16); animation-direction: reverse; animation-duration: 48s; }
-    .profile-frame { position: relative; width: 250px; aspect-ratio: .82; padding: 8px; border: 1px solid rgba(111,178,255,.5); border-radius: 28px; background: linear-gradient(145deg, rgba(85,166,255,.18), rgba(101,228,243,.03)); box-shadow: 0 25px 90px rgba(0,0,0,.35), 0 0 55px rgba(55,133,255,.12); transform: rotate(2deg); }
-    .profile-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; border-radius: 21px; border: 1px dashed rgba(145,187,240,.42); background: linear-gradient(160deg, #172943, #0a1221 70%); color: #a9c5eb; text-align: center; padding: 20px; }
-    .profile-placeholder svg { width: 72px; height: 72px; opacity: .92; }
-    .profile-placeholder strong { color: #e9f2ff; font-size: .94rem; }
-    .profile-placeholder small { color: #8298b8; font-size: .75rem; line-height: 1.5; }
-    .profile-photo { display: block; width: 100%; height: 100%; object-fit: cover; border-radius: 21px; }
-    .floating-card { position: absolute; padding: 12px 15px; border-radius: 15px; border: 1px solid var(--line); background: rgba(11,19,33,.9); box-shadow: 0 15px 40px rgba(0,0,0,.24); backdrop-filter: blur(10px); font-size: .8rem; color: #d6e5fb; animation: float 5s ease-in-out infinite; }
-    .floating-card span { display: block; color: var(--muted); font-size: .7rem; }
-    .float-one { top: 17%; right: -3%; } .float-two { bottom: 15%; left: -2%; animation-delay: -2.2s; }
-    section { padding-block: 82px; }
-    .section-head { max-width: 680px; margin-bottom: 34px; }
-    .kicker { color: var(--cyan); text-transform: uppercase; letter-spacing: .16em; font-weight: 800; font-size: .75rem; }
-    h2 { margin: 9px 0 10px; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.12; letter-spacing: -.055em; }
-    .section-intro { margin: 0; color: var(--muted); }
-    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 22px; }
-    .panel { border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(145deg, rgba(18,29,49,.88), rgba(10,16,28,.78)); padding: 27px; }
-    .panel p { color: var(--muted); margin: 0 0 13px; }
-    .panel p:last-child { margin-bottom: 0; }
-    .mini-title { color: #e7f0ff; font-weight: 750; margin-bottom: 10px; }
-    .fact-list { display: grid; gap: 15px; }
-    .fact { display: flex; align-items: flex-start; gap: 12px; }
-    .fact-icon { flex: 0 0 37px; width: 37px; height: 37px; display: grid; place-items: center; border: 1px solid rgba(85,166,255,.25); background: rgba(48,111,190,.12); border-radius: 12px; color: var(--cyan); }
-    .fact b { display: block; font-size: .9rem; } .fact small { display: block; color: var(--muted); font-size: .8rem; }
-    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .project { display: flex; flex-direction: column; min-height: 285px; padding: 23px; transition: transform .22s ease, border-color .22s ease; }
-    .project:hover { transform: translateY(-5px); border-color: rgba(85,166,255,.48); }
-    .project-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 21px; }
-    .project-icon { width: 47px; height: 47px; display: grid; place-items: center; border-radius: 15px; color: var(--cyan); background: rgba(66,137,226,.13); border: 1px solid rgba(85,166,255,.23); font-size: 1.25rem; }
-    .status { font-size: .68rem; border: 1px solid rgba(101,228,243,.2); color: #a8eaf2; background: rgba(101,228,243,.06); padding: 4px 8px; border-radius: 999px; }
-    .project h3 { margin: 0 0 8px; font-size: 1.1rem; letter-spacing: -.025em; }
-    .project p { color: var(--muted); margin: 0 0 19px; font-size: .9rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; }
-    .tag { font-size: .72rem; color: #b8c8e0; padding: 5px 9px; border: 1px solid var(--line); border-radius: 8px; }
-    .note { margin-top: 18px; padding: 13px 16px; border-left: 2px solid var(--blue); background: rgba(45,105,181,.08); border-radius: 0 12px 12px 0; color: #a8bad4; font-size: .84rem; }
-    .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .skill-card h3 { margin: 0 0 15px; font-size: 1rem; }
-    .skill-line { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(137,169,220,.1); color: #c4d2e8; font-size: .88rem; }
-    .skill-line:last-child { border-bottom: 0; }
-    .level { color: #8ea3c2; font-size: .72rem; }
-    .education { display: grid; grid-template-columns: 70px 1fr; gap: 19px; align-items: start; }
-    .edu-mark { width: 66px; height: 66px; display: grid; place-items: center; border-radius: 19px; border: 1px solid rgba(85,166,255,.3); background: linear-gradient(145deg, rgba(85,166,255,.2), rgba(101,228,243,.06)); color: var(--cyan); font-size: 1.45rem; }
-    .education h3 { margin: 0 0 5px; font-size: 1.13rem; }
-    .education .sub { color: #a9c1e2; margin-bottom: 10px; font-size: .9rem; }
-    .education p { color: var(--muted); margin: 0; }
-    .contact-box { position: relative; overflow: hidden; display: flex; align-items: center; justify-content: space-between; gap: 30px; padding: 37px; border-radius: 26px; border: 1px solid rgba(85,166,255,.27); background: radial-gradient(ellipse at 90% 10%, rgba(57,129,231,.19), transparent 55%), linear-gradient(135deg, rgba(16,29,50,.92), rgba(9,15,27,.9)); }
-    .contact-box h2 { font-size: clamp(1.8rem, 4vw, 2.65rem); }
-    .contact-box p { color: var(--muted); margin: 0; max-width: 570px; }
-    .contact-actions { display: flex; flex-wrap: wrap; gap: 10px; flex-shrink: 0; }
-    footer { border-top: 1px solid var(--line); padding: 25px 0; color: #788ba8; font-size: .82rem; }
-    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 15px; }
-    .footer-links { display: flex; gap: 17px; } .footer-links a:hover { color: var(--text); }
-    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @keyframes spin { to { transform: rotate(360deg); } }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
-    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; } .reveal { opacity: 1; transform: none; } }
-    @media (max-width: 900px) {
-      .hero { gap: 20px; grid-template-columns: 1.1fr .9fr; min-height: 600px; }
-      .project-grid, .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .project-grid .project:last-child { grid-column: span 2; min-height: auto; }
-      .float-one { right: -4%; }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
-    @media (max-width: 700px) {
-      .wrap { width: min(var(--max), calc(100% - 30px)); }
-      .nav-inner { min-height: 64px; }
-      .menu-btn { display: inline-flex; }
-      .nav-links { display: none; position: absolute; top: 63px; left: 0; right: 0; padding: 18px 22px 22px; flex-direction: column; align-items: stretch; gap: 4px; background: rgba(7,11,20,.97); border-bottom: 1px solid var(--line); }
-      .nav-links.open { display: flex; }
-      .nav-links a { padding: 10px 5px; }
-      .nav-links .nav-cta { text-align: center; margin-top: 7px; }
-      .hero { grid-template-columns: 1fr; padding-block: 65px 45px; gap: 20px; }
-      .hero-content { order: 1; } .hero-visual { order: 0; min-height: 330px; }
-      .orbit { width: 300px; } .orbit.orbit-two { width: 235px; }
-      .profile-frame { width: 185px; }
-      .float-one { top: 10%; right: 1%; } .float-two { bottom: 9%; left: 0; }
-      h1 { font-size: clamp(2.8rem, 14vw, 4.4rem); }
-      section { padding-block: 60px; }
-      .about-grid, .project-grid, .skills-grid { grid-template-columns: 1fr; }
-      .project-grid .project:last-child { grid-column: auto; }
-      .panel { padding: 22px; }
-      .contact-box { flex-direction: column; align-items: flex-start; padding: 26px; }
-      .education { grid-template-columns: 54px 1fr; gap: 14px; }
-      .edu-mark { width: 52px; height: 52px; border-radius: 15px; }
-      .footer-inner { flex-direction: column; align-items: flex-start; }
+
+    .logo-badge {
+      background: var(--accent);
+      color: #000;
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+
+    .btn-nav {
+      background: rgba(0, 242, 254, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent) !important;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .btn-nav:hover {
+      background: var(--accent);
+      color: #000 !important;
+      box-shadow: 0 0 15px var(--accent-glow);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 130px 20px 60px;
+      position: relative;
+    }
+
+    .badge {
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(0, 242, 254, 0.3);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      display: inline-block;
+    }
+
+    .hero-title {
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle-ar {
+      font-family: 'Cairo', sans-serif;
+      font-weight: 700;
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    .hero-desc {
+      max-width: 650px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      margin-bottom: 35px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.5);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1px solid var(--border);
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section {
+      padding: 80px 8%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      border-color: rgba(0, 242, 254, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 30px -10px var(--accent-glow);
+    }
+
+    .card-icon {
+      width: 50px;
+      height: 50px;
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--accent);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 15px;
+    }
+
+    .tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border);
+      color: #e2e8f0;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      section { padding: 60px 5%; }
     }
   </style>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Mostafa Essam",
-    "description": "Engineering student at Pharos University in Alexandria, exploring robotics, programming, and practical engineering projects.",
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Pharos University in Alexandria"
-    },
-    "url": ""
-  }
-  </script>
 </head>
 <body>
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="brand" href="#home" aria-label="Mostafa Essam home">
-        <span class="brand-mark">ME</span><span>Mostafa Essam<span style="color:var(--blue)">.</span></span>
-      </a>
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Menu ☰</button>
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
-        <a href="#about">About</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#education">Education</a><a class="nav-cta" href="#contact">Contact ↗</a>
-      </nav>
+
+  <!-- Interactive Cyber-Tech Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Navbar -->
+  <nav>
+    <a href="#" class="logo">Mostafa <span class="logo-badge">PUA</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact" class="btn-nav">Contact</a>
     </div>
-  </header>
+  </nav>
 
-  <main>
-    <section class="wrap hero" id="home">
-      <div class="hero-content">
-        <div class="eyebrow"><span class="dot"></span> Engineering student · Learning by building</div>
-        <h1><span class="gradient-text">Mostafa</span><br>Essam<span style="color:var(--blue)">.</span></h1>
-        <p class="hero-copy">Engineering student at <strong>Pharos University in Alexandria</strong>, exploring the intersection of engineering, robotics, and programming. I’m building my skills one project at a time.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="#projects">Explore my projects <span aria-hidden="true">↘</span></a>
-          <a class="btn btn-secondary" href="#contact">Let’s connect <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="hero-meta">
-          <span>⌁ Alexandria, Egypt</span><span>⌘ Engineering · Robotics · Code</span>
-        </div>
-      </div>
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="badge"><i class="fa-solid fa-graduation-cap"></i> Pharos University in Alexandria</div>
+    <h1 class="hero-title">Mostafa Essam</h1>
+    <div class="hero-subtitle-ar">مصطفى عصام</div>
+    <p class="hero-desc">
+      Engineering Student passionate about <strong>Robotics</strong>, <strong>Embedded Systems</strong>, and high-performance programming in <strong>C++</strong> & <strong>Python</strong>. Building the future one project at a time.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">Explore Projects <i class="fa-solid fa-arrow-down" style="margin-left: 8px;"></i></a>
+      <a href="#contact" class="btn-secondary">Get In Touch</a>
+    </div>
+  </div>
 
-      <div class="hero-visual" aria-label="Profile photo placeholder">
-        <div class="orbit"></div><div class="orbit orbit-two"></div>
-        <div class="profile-frame">
-           <img class="profile-photo" src="profile.jpg" alt="Mostafa Essam">
-          </div>
-        </div>
-        <div class="floating-card float-one">⚙ Robotics<span>Build · Test · Improve</span></div>
-        <div class="floating-card float-two">⌘ Programming<span>Curiosity into code</span></div>
+  <!-- About Section -->
+  <section id="about">
+    <div class="section-title">
+      <i class="fa-solid fa-user"></i>
+      <span>About Me</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-microchip"></i></div>
+        <h3>Engineering Student</h3>
+        <p>Currently studying engineering at Pharos University in Alexandria (PUA). Driven by curiosity to understand how intelligent systems interact with the real world.</p>
       </div>
-    </section>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>Robotics & Hardware</h3>
+        <p>Focusing on mobile robots, sensors, motor control, and embedded microcontrollers to build functional autonomous hardware prototypes.</p>
+      </div>
+    </div>
+  </section>
 
-    <section class="wrap reveal" id="about">
-      <div class="section-head">
-        <div class="kicker">01 / About</div>
-        <h2>Curious by nature.<br><span class="gradient-text">Engineer in progress.</span></h2>
-        <p class="section-intro">I’m at the beginning of my engineering journey, learning how ideas become real systems through design, code, and hands-on experimentation.</p>
-      </div>
-      <div class="about-grid">
-        <div class="panel">
-          <div class="mini-title">A little about me</div>
-          <p>I’m Mostafa, an engineering student at Pharos University in Alexandria, Egypt. I’m interested in practical engineering challenges, robotics, and software — especially where hardware and code work together.</p>
-          <p>This portfolio is a living record of what I’m learning, the projects I contribute to, and the skills I develop along the way. I value clear thinking, teamwork, and learning by doing.</p>
-        </div>
-        <div class="panel">
-          <div class="mini-title">What I’m exploring</div>
-          <div class="fact-list">
-            <div class="fact"><span class="fact-icon">⌘</span><div><b>Programming</b><small>Learning fundamentals and problem-solving.</small></div></div>
-            <div class="fact"><span class="fact-icon">⚙</span><div><b>Robotics & electronics</b><small>Understanding sensors, motors, and control.</small></div></div>
-            <div class="fact"><span class="fact-icon">◇</span><div><b>Engineering design</b><small>Turning concepts into practical prototypes.</small></div></div>
-          </div>
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="section-title">
+      <i class="fa-solid fa-layer-group"></i>
+      <span>Core Focus & Skills</span>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-code"></i></div>
+        <h3>Languages</h3>
+        <p>Writing clean, efficient code for system control and algorithmic problem-solving.</p>
+        <div class="tags">
+          <span class="tag">C++</span>
+          <span class="tag">Python</span>
+          <span class="tag">OOP</span>
         </div>
       </div>
-    </section>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-gear"></i></div>
+        <h3>Hardware & Systems</h3>
+        <p>Integrating sensors, actuators, and controllers into cohesive robotic units.</p>
+        <div class="tags">
+          <span class="tag">Embedded Systems</span>
+          <span class="tag">Microcontrollers</span>
+          <span class="tag">Robotics</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+        <h3>Design & Tools</h3>
+        <p>Utilizing modern design tools to model components and structure embedded code.</p>
+        <div class="tags">
+          <span class="tag">Fusion 360</span>
+          <span class="tag">VS Code</span>
+          <span class="tag">Git & GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="wrap reveal" id="projects">
-      <div class="section-head">
-        <div class="kicker">02 / Selected work</div>
-        <h2>Projects & experiments<span style="color:var(--blue)">.</span></h2>
-        <p class="section-intro">A space for coursework, prototypes, and experiments. Project cards below are starting points — update each one with your actual progress, photos, and contribution before presenting it as completed work.</p>
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="section-title">
+      <i class="fa-solid fa-diagram-project"></i>
+      <span>Featured Engineering Projects</span>
+    </div>
+    <div class="grid-2">
+      <div class="card">
+        <img src="r3.jpg" alt="Robot Project" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--border);">
+        <h3>Robotics & Autonomous Motion</h3>
+        <p>Exploring how a small robot can move, detect obstacles, and respond to sensor input. Add your final design, code, and test results here when ready.</p>
+        <div class="tags"><span class="tag">Robotics</span><span class="tag">Sensors</span><span class="tag">Control</span></div>
       </div>
-      <div class="project-grid">
-        <article class="panel project">
-          <img src="r3.jpg" alt="Robot Project" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--border);">
-          <div class="project-top"><span class="project-icon">⌁</span><span class="status">Coursework concept</span></div>
-          <h3>Robotics & Autonomous Motion</h3>
-          <p>Exploring how a small robot can move, detect obstacles, and respond to sensor input. Add your final design, code, and test results here when ready.</p>
-          <div class="tags"><span class="tag">Robotics</span><span class="tag">Sensors</span><span class="tag">Control</span></div>
-        </article>
-        <article class="panel project">
-          <img src="r2.jpg" alt="Programming" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--border);">
-          <div class="project-top"><span class="project-icon">⌘</span><span class="status">Learning project</span></div>
-          <h3>Programming Foundations</h3>
-          <p>Building programming fundamentals through small exercises and practical problem-solving. Add examples of code you understand and can explain.</p>
-          <div class="tags"><span class="tag">C++</span><span class="tag">Logic</span><span class="tag">Problem-solving</span></div>
-        </article>
-        <article class="panel project">
-          <img src="r1.jpg" alt="Engineering Drawing" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--border);">
-          <div class="project-top"><span class="project-icon">◇</span><span class="status">Design & prototyping</span></div>
-          <h3>Engineering Design Lab</h3>
-          <p>Documenting sketches, dimensions, component choices, and lessons learned while turning an engineering idea into a buildable design.</p>
-          <div class="tags"><span class="tag">CAD / Design</span><span class="tag">Prototyping</span><span class="tag">Documentation</span></div>
-        </article>
+      <div class="card">
+        <img src="r2.jpg" alt="Programming" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--border);">
+        <h3>Programming Foundations</h3>
+        <p>Building programming fundamentals through small exercises and practical problem-solving. Add examples of code you understand and can explain.</p>
+        <div class="tags"><span class="tag">C++</span><span class="tag">Logic</span><span class="tag">Problem-solving</span></div>
       </div>
-      <div class="note">Portfolio honesty rule: change each status to “Completed” only when the work is genuinely finished. Add your role, the team’s work, real photos, and a short explanation of what you personally did.</div>
-    </section>
+      <div class="card">
+        <img src="r1.jpg" alt="Engineering Drawing" style="width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 12px; border: 1px solid var(--border);">
+        <h3>Engineering Design Lab</h3>
+      font-size: 1.8rem;
+        <p>Documenting sketches, dimensions, component choices, and lessons learned while turning an engineering idea into a buildable design.</p>
+        <div class="tags"><span class="tag">CAD / Design</span><span class="tag">Prototyping</span><span class="tag">Documentation</span></div>
+      </div>
+    </div>
+  </section>
 
-    <section class="wrap reveal" id="skills">
-      <div class="section-head">
-        <div class="kicker">03 / Toolkit</div>
-        <h2>Skills I’m developing<span style="color:var(--blue)">.</span></h2>
-        <p class="section-intro">A transparent snapshot of areas I’m studying. Update the labels as your confidence and hands-on experience grow.</p>
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="section-title">
+      <i class="fa-solid fa-envelope"></i>
+      <span>Let's Connect</span>
+    </div>
+    <div class="card" style="text-align: center; padding: 50px 20px;">
+      <h3 style="font-size: 1.8rem; margin-bottom: 15px;">Mostafa Essam</h3>
+      <p style="color: var(--text-muted); margin-bottom: 30px;">Open for collaboration on Engineering, Robotics, and Embedded Projects.</p>
+      <div class="hero-btns">
+        <a href="https://github.com/mostafa-essam-eng" target="_blank" class="btn-primary"><i class="fa-brands fa-github"></i> GitHub Profile</a>
       </div>
-      <div class="skills-grid">
-        <div class="panel skill-card">
-          <h3>⌘ Programming</h3>
-          <div class="skill-line"><span>C++ fundamentals</span><span class="level">Learning</span></div>
-          <div class="skill-line"><span>Problem-solving</span><span class="level">Developing</span></div>
-          <div class="skill-line"><span>Web basics (HTML/CSS)</span><span class="level">Portfolio project</span></div>
-        </div>
-        <div class="panel skill-card">
-          <h3>⚙ Robotics & Electronics</h3>
-          <div class="skill-line"><span>Sensors & actuators</span><span class="level">Exploring</span></div>
-          <div class="skill-line"><span>Microcontrollers</span><span class="level">Learning</span></div>
-          <div class="skill-line"><span>System integration</span><span class="level">Developing</span></div>
-        </div>
-        <div class="panel skill-card">
-          <h3>◇ Engineering Practice</h3>
-          <div class="skill-line"><span>Technical documentation</span><span class="level">Developing</span></div>
-          <div class="skill-line"><span>Design & prototyping</span><span class="level">Learning</span></div>
-          <div class="skill-line"><span>Team collaboration</span><span class="level">Growing</span></div>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="wrap reveal" id="education">
-      <div class="section-head">
-        <div class="kicker">04 / Education</div>
-        <h2>Learning with purpose<span style="color:var(--blue)">.</span></h2>
-      </div>
-      <div class="panel education">
-        <div class="edu-mark">⌂</div>
-        <div>
-          <h3>Faculty of Engineering</h3>
-          <div class="sub">Pharos University in Alexandria · Alexandria, Egypt</div>
-          <p>Engineering preparatory student. Currently building foundational knowledge and exploring engineering, robotics, and programming through coursework and personal learning.</p>
-          <div class="tags" style="margin-top:16px"><span class="tag">Preparatory year</span><span class="tag">Engineering fundamentals</span><span class="tag">Student portfolio</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="wrap reveal" id="contact">
-      <div class="contact-box">
-        <div>
-          <div class="kicker">05 / Contact</div>
-          <h2>Let’s build something<br><span class="gradient-text">worth learning from.</span></h2>
-          <p>Open to connecting with students, engineers, and people who enjoy sharing ideas and learning through projects.</p>
-        </div>
-        <div class="contact-actions">
-          <!-- Replace the # links below with your real public profile URLs. -->
-          <a class="btn btn-primary" href="https://www.linkedin.com/in/mostafa-essam-801929439?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-          <a class="btn btn-secondary" href="https://github.com/mostafa-essam-eng" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        </div>
-      </div>
-      <p style="color:#7186a4;font-size:.78rem;margin:14px 4px 0">Tip: edit the LinkedIn and GitHub links in index.html to point to your actual profiles. Add a public email only if you’re comfortable sharing it.</p>
-    </section>
-  </main>
-
+  <!-- Footer -->
   <footer>
-    <div class="wrap footer-inner">
-      <span>© <span id="year"></span> Mostafa Essam. Built with curiosity & code.</span>
-      <div class="footer-links"><a href="#home">Back to top ↑</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
-    </div>
+    <p>&copy; 2026 Mostafa Essam (مصطفى عصام). Pharos University in Alexandria.</p>
   </footer>
-<!-- Interactive Cyber-Tech Background & Mobile Nav Script -->
-  <script>
-    // Mobile navigation logic
-    const menuBtn = document.getElementById('menuBtn');
-    const navLinks = document.getElementById('navLinks');
-    if (menuBtn && navLinks) {
-      menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('open');
-      });
-    }
 
-    // Interactive Canvas Background
+  <!-- Interactive Cyber-Tech Background Script -->
+  <script>
     const canvas = document.getElementById('bg-canvas');
     if (canvas) {
       const ctx = canvas.getContext('2d');
@@ -416,7 +504,7 @@
           ctx.fillStyle = '#00f2fe';
           ctx.beginPath();
           ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-          ctx.fill();
+          this.fill();
         }
       }
 
@@ -447,7 +535,8 @@
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.stroke();
+              ctx.
+                stroke();
             }
           }
 
