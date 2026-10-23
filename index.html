@@ -34,12 +34,8 @@
     }
 
     body {
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: 'Plus Jakarta Sans', 'Cairo', sans-serif;
-      overflow-x: hidden;
-      line-height: 1.6;
-    }
+  background-color: transparent !important;
+}
 
     #bg-canvas {
       position: fixed;
@@ -530,35 +526,37 @@
             const dy = p.y - particles[j].y;
             const dist = Math.sqrt(dx * dx + dy * dy);
             if (dist < 130) {
-              ctx.strokeStyle = rgba(0, 242, 254, ${(1 - dist / 130) * 0.35});
-              ctx.lineWidth = 0.6;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(particles[j].x, particles[j].y);
-              ctx.
-                stroke();
-            }
-          }
+          ctx.strokeStyle = `rgba(0, 242, 254, ${(1 - dist / 130) * 0.35})`;
+          ctx.lineWidth = 0.6;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(particles[j].x, particles[j].y);
+          ctx.stroke();
+        }
+      }
 
-          if (mouse.x !== null && mouse.y !== null) {
-            const mdx = p.x - mouse.x;
-            const mdy = p.y - mouse.y;
-            const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
-            if (mdist < 160) {
-              ctx.strokeStyle = rgba(0, 242, 254, ${(1 - mdist / 160) * 0.5});
-              ctx.lineWidth = 0.8;
-              ctx.beginPath();
-              ctx.moveTo(p.x, p.y);
-              ctx.lineTo(mouse.x, mouse.y);
-              ctx.stroke();
-            }
-          }
+      if (mouse.x !== null && mouse.y !== null) {
+        const mdx = p.x - mouse.x;
+        const mdy = p.y - mouse.y;
+        const mdist = Math.sqrt(mdx * mdx + mdy * mdy);
+        if (mdist < 160) {
+          ctx.strokeStyle = `rgba(0, 242, 254, ${(1 - mdist / 160) * 0.5})`;
+ 
+          ctx.lineWidth = 0.8;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          ctx.stroke();
+        }
+      }
         });
 
         requestAnimationFrame(animate);
       }
       animate();
     }
+  <script>
   </script>
+  
 </body>
 </html>
