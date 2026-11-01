@@ -375,5 +375,20 @@
     }
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
+<script type="text/javascript">
+  (function(d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function() {
+        window.voiceflow.chat.load({
+          verify: { projectID: '6ae7883d3672602f85c1a323' },
+          url: 'https://general-runtime.voiceflow.com',
+          voice: {
+            url: 'https://runtime-api.voiceflow.com'
+          }
+        });
+      }
+      v.src = 'https://cdn.voiceflow.com/widget-next/bundle.mjs'; v.type = 'text/javascript'; s.parentNode.insertBefore(v, s);
+  })(document, 'script');
+</script>
 </body>
 </html>
