@@ -284,108 +284,124 @@
       </div>
     </section>
 
-    <!-- Projects -->
+   <!-- Projects & Achievements Section -->
     <section id="projects" class="max-w-6xl mx-auto px-5 py-16">
-      <p class="text-xs uppercase tracking-widest text-cyan-400 font-mono mb-3">الهندسة والتكنولوجيا</p>
+      <p class="text-xs uppercase tracking-widest text-cyan-400 font-mono mb-3">الهندسة والابتكارات</p>
       <div class="flex flex-wrap justify-between items-end gap-4 mb-9">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white">المشاريع المميزة</h2>
-        <span class="text-xs text-slate-500">مشاريع طلابية وأعمال جارية</span>
+        <h2 class="text-3xl sm:text-4xl font-bold text-white">المشاريع المميزة والشهادات</h2>
+        <span class="text-xs text-slate-500">نماذج أولية تفاعلية وتكريمات رسمية</span>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-6">
-        <article class="project-card glass rounded-2xl overflow-hidden">
-          <div class="p-7">
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="text-xs rounded-full px-3 py-1 bg-rose-500/10 text-rose-400">ناسا سبيس أبس 2026</span>
-              <span class="text-xs rounded-full px-3 py-1 bg-cyan-400/10 text-cyan-300">لعبة ويب ثلاثية الأبعاد</span>
+      <div class="grid md:grid-cols-3 gap-6">
+        
+        <!-- 1. NASA LifeLoop Game Project -->
+        <article class="project-card glass rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-300 shadow-xl group">
+          <div>
+            <div class="relative w-full aspect-video overflow-hidden bg-slate-900">
+              <img src="r5.jpg" alt="محاكي مستوطنة المريخ ثلاثي الأبعاد" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3">
+                <span class="text-[11px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 bg-rose-500/20 text-rose-300 border border-rose-500/30 backdrop-blur-md">ناسا 2026</span>
+              </div>
             </div>
-            <h3 class="text-xl font-bold text-white mb-3">LIFELOOP — محاكي مستوطنة المريخ ثلاثي الأبعاد</h3>
-            <p class="text-sm text-slate-400 leading-7 mb-6">
-              نموذج أولي تفاعلي تعليمي ثلاثي الأبعاد لمحاكاة بقاء الإنسان وإدارة الموارد على كوكب المريخ، مُصمم باستخدام المراجع العلمية الحقيقية لناسا، وواجهات برمجة التطبيقات، و Three.js.
-            </p>
-            <div class="project-links">
-              <a href="https://mostafa-essam-eng.github.io/Lifeloop-game/" target="_blank" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium">
-                تجربة اللعبة مباشرة &larr;
-              </a>
-            </div>
-          </div>
-        </article>
-
-        <article class="project-card glass rounded-2xl overflow-hidden">
-          <div class="h-48 overflow-hidden">
-            <img src="r3.jpg" alt="روبوت توصيل ذاتي الحركة" class="w-full h-full object-cover">
-          </div>
-          <div class="p-7">
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="text-xs rounded-full px-3 py-1 bg-cyan-400/10 text-cyan-300">روبوتات</span>
-              <span class="text-xs rounded-full px-3 py-1 bg-amber-400/10 text-amber-300">قيد التطوير</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">روبوت توصيل ذاتي الحركة</h3>
-            <p class="text-sm text-slate-400 leading-7">
-              مشروع هندسي طلابي يركز على تطوير روبوت توصيل يتحرك بحركة ذاتية، يتجنب العقبات، ويحتوي على ذراع روبوتية للتعامل مع الأشياء. يتضمن المشروع أيضاً تصميم الهيكل وتكامل الكاميرات.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-5">
-              <span class="tag">حركة ذاتية</span>
-              <span class="tag">تفادي العقبات</span>
-              <span class="tag">ذراع روبوتية</span>
-              <span class="tag">طباعة ثلاثية الأبعاد</span>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag">Three.js</span>
+                <span class="tag">لعبة ثلاثية الأبعاد</span>
+                <span class="tag">محاكاة</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2 leading-snug">LIFELOOP — محاكي مستوطنة المريخ</h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                نموذج أولي تفاعلي تعليمي ثلاثي الأبعاد لمحاكاة بقاء الإنسان وإدارة الموارد على كوكب المريخ، مُصمم باستخدام المراجع العلمية الحقيقية لناسا.
+              </p>
             </div>
           </div>
-        </article>
-
-        <article class="project-card glass rounded-2xl overflow-hidden">
-          <div class="h-48 bg-gradient-to-br from-indigo-950 via-slate-900 to-blue-950 flex items-center justify-center">
-            <div class="h-48 overflow-hidden w-full">
-              <img src="r4.jpg" alt="موقع البورتفوليو الشخصي" class="w-full h-full object-cover">
-            </div>
-          </div>
-          <div class="p-7">
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="text-xs rounded-full px-3 py-1 bg-indigo-400/10 text-indigo-300">تطوير الويب</span>
-              <span class="text-xs rounded-full px-3 py-1 bg-emerald-400/10 text-emerald-300">مستمر</span>
-            </div>
-            <h3 class="text-xl font-bold text-white mb-3">موقع البورتفوليو الشخصي</h3>
-            <p class="text-sm text-slate-400 leading-7">
-              موقع شخصي تم بناؤه لعرض خلفيتي الأكاديمية، اهتماماتي الهندسية، مشاريعي، وروابطي المهنية. الموقع مُضاف ومستضاف عبر GitHub Pages.
-            </p>
-            <div class="flex flex-wrap gap-2 mt-5">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">GitHub Pages</span>
-            </div>
-            <a href="https://github.com/mostafa-essam-eng" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-cyan-300 mt-5 hover:text-cyan-200">
-              عرض جيت هاب <i data-lucide="arrow-up-left" class="w-4 h-4"></i>
+          <div class="px-6 pb-6 pt-0">
+            <a href="https://mostafa-essam-eng.github.io/Lifeloop-game/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium group/link">
+              تجربة اللعبة مباشرة &larr;
             </a>
           </div>
         </article>
 
-      </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates" class="max-w-6xl mx-auto px-5 py-16">
-      <p class="text-xs uppercase tracking-widest text-cyan-400 font-mono mb-3">التقديرات والاعتمادات</p>
-      <div class="flex flex-wrap justify-between items-end gap-4 mb-9">
-        <h2 class="text-3xl sm:text-4xl font-bold text-white">الشهادات والإنجازات</h2>
-        <span class="text-xs text-slate-500">تكريمات رسمية</span>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-6">
-        <article class="project-card glass rounded-2xl overflow-hidden p-7">
-          <div class="flex flex-wrap gap-2 mb-4">
-            <span class="text-xs rounded-full px-3 py-1 bg-amber-400/10 text-amber-300">ناسا سبيس أبس 2026</span>
+        <!-- 2. NASA Certificate Card -->
+        <article class="project-card glass rounded-2xl overflow-hidden flex flex-col justify-between border border-amber-500/30 hover:border-amber-400/60 transition-all duration-300 shadow-xl group">
+          <div>
+            <div class="relative w-full aspect-video overflow-hidden bg-slate-900">
+              <img src="r5.jpg" alt="شهادة ناسا سبيس أبس" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3">
+                <span class="text-[11px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 bg-amber-500/20 text-amber-300 border border-amber-500/30 backdrop-blur-md">تكريم رسمي</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="text-xs rounded-full px-3 py-1 bg-amber-400/10 text-amber-300 border border-amber-400/20">مرشح عالمي</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2 leading-snug">شهادة ناسا سبيس أبس 2026</h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                تقدير وشهادة رسمية ممنوحة نظير التطوير والتقدّم الناجح بمشروع محاكاة المريخ LIFELOOP.
+              </p>
+            </div>
           </div>
-          <h3 class="text-xl font-bold text-white mb-3">شهادة مرشح عالمي / مشارك</h3>
-          <p class="text-sm text-slate-400 leading-7 mb-6">
-            ممنوحة نظير التطوير والتقدّم الناجح بمشروع <strong>LIFELOOP</strong>، النموذج الأولي التفاعلي لمحاكاة مستوطنة المريخ ثلاثية الأبعاد.
-          </p>
-          <div class="project-links">
-            <a href="r5.jpg" target="_blank" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium">
+          <div class="px-6 pb-6 pt-0">
+            <a href="r5.jpg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-amber-400 hover:text-amber-300 font-medium group/link">
               عرض الشهادة كاملة &larr;
             </a>
           </div>
         </article>
+
+        <!-- 3. Autonomous Delivery Robot (r3.jpg) -->
+        <article class="project-card glass rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-300 shadow-xl group">
+          <div>
+            <div class="relative w-full aspect-video overflow-hidden bg-slate-900">
+              <img src="r3.jpg" alt="روبوت توصيل ذاتي الحركة" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3">
+                <span class="text-[11px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 bg-cyan-400/20 text-cyan-300 border border-cyan-400/30 backdrop-blur-md">روبوتات</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag">حركة ذاتية</span>
+                <span class="tag">ذراع روبوتية</span>
+                <span class="tag">طباعة 3D</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2 leading-snug">روبوت توصيل ذاتي الحركة</h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                مشروع هندسي طلابي يركز على تطوير روبوت توصيل يتحرك بحركة ذاتية، يتجنب العقبات، ويحتوي على ذراع روبوتية.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <span class="text-xs text-slate-500 font-mono">قيد التطوير</span>
+          </div>
+        </article>
+
+        <!-- 4. Personal Portfolio Website (r4.jpg) -->
+        <article class="project-card glass rounded-2xl overflow-hidden flex flex-col justify-between border border-slate-700/50 hover:border-cyan-400/60 transition-all duration-300 shadow-xl group md:col-span-3 lg:col-span-1">
+          <div>
+            <div class="relative w-full aspect-video overflow-hidden bg-slate-900">
+              <img src="r4.jpg" alt="موقع البورتفوليو الشخصي" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute top-3 left-3">
+                <span class="text-[11px] font-semibold uppercase tracking-wider rounded-full px-3 py-1 bg-indigo-400/20 text-indigo-300 border border-indigo-400/30 backdrop-blur-md">تطوير الويب</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <div class="flex flex-wrap gap-2 mb-3">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+              </div>
+              <h3 class="text-lg font-bold text-white mb-2 leading-snug">موقع البورتفوليو الشخصي</h3>
+              <p class="text-sm text-slate-400 leading-relaxed mb-4">
+                موقع شخصي تم بناؤه لعرض خلفيتي الأكاديمية، اهتماماتي الهندسية، ومشاريعي، ومستضاف عبر GitHub Pages.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-0">
+            <a href="https://github.com/mostafa-essam-eng" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium group/link">
+              عرض جيت هاب <i data-lucide="arrow-up-left" class="w-4 h-4 transition-transform group-hover/link:-translate-x-0.5 group-hover/link:-translate-y-0.5"></i>
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
